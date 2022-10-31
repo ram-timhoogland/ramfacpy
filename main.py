@@ -1,9 +1,8 @@
 from os import environ as env
-import requests
-import configparser
+from configparser import ConfigParser as cp
 import ramfac
 
-config = configparser.ConfigParser()
+config = cp()
 config.read('env/config.cfg')
 for key in config['azure']:
     env[key] = config['azure'][key]
